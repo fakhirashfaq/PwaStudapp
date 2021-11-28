@@ -1,0 +1,15 @@
+<div class="div-main">
+    <div class="navHeaderWrap_div">
+            <div class="carousel-cell " *ngFor="let cat of categories ; let i =index" >
+                <div class="dropdown">
+                    <button class="dropbtn btn-size" (click)="navigateToMainCtg(cat.category)">{{cat.category}}
+                        <!-- <img src="/assets/down-arrow.png" class="arrow" alt="" *ngIf="cat.category != 'All'"> -->
+                    </button>
+                    <div class="dropdown-content">
+                        <a *ngFor="let subcat of cat.subCategory"
+                            (click)="navigateToCtg(subcat.name)">{{subcat.name}}</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

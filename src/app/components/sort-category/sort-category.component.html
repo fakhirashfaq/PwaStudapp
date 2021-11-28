@@ -1,0 +1,13 @@
+<form [formGroup]="sortFilterFormG" class="categoryCBDropdownFg_Cl vertical-align-middle">
+    <input id="sort_one_Id" class="sortItem_I" formControlName="sortFilterFormC" value="0" type="radio"
+        (change)="updateDiscountSorting()" />
+    <label for="sort_one_Id" class="sortItem_Lbl button" tabindex=0  title="Deals" aria-label="Deals">DEALS</label>
+
+    <input id="sort_two_Id" class="sortItem_I" formControlName="sortFilterFormC" value="1" type="radio"
+        (change)="updateDiscountSorting()" />
+    <label for="sort_two_Id" class="sortItem_Lbl button" tabindex=0  title="Latest Discounts" aria-label="Latest Discounts">NEW</label>
+
+    <input id="sort_three_Id" class="sortItem_I" formControlName="sortFilterFormC" value="2" type="radio"
+        (change)="updateDiscountSorting()" />
+    <label for="sort_three_Id" class="sortItem_Lbl button" tabindex=0 title="Coolest Discounts" aria-label="Coolest Discounts">COOL</label>
+</form>

@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="carousel" *ngIf="carouselItems.length > 0">
+	<ngp-carousel [perPage]="true" [innerButtons]="true" [loop]="true" [animationDelay]="100" [animationDuration]="500"
+		[animationEasing]="'ease-in-out'" [autoSlide]="4000">
+		<ng-template *ngFor="let carouselItem of carouselItems" ngpCarouselItem>
+			<img src="{{carouselItem.imgUrl}}" class="button" [routerLink]="['/discount', carouselItem.dcId]" alt="{{carouselItem.dcId}}" loading="lazy">
+		</ng-template>
+
+	</ngp-carousel>
+
+</div>
+
+<h1 class="center" *ngIf="currCategory">{{(currCategory)}}</h1>
+
+<div class="sortAndFilterWrap">
+	<div class="sortWrapper">
+		<app-sort-category></app-sort-category>
+	</div>
+	<div class="dctTypeWrapper">
+		<app-discount-type-filter></app-discount-type-filter>
+	</div>
+</div>
+
+<app-pageLoading *ngIf="!isDiscountLoaded"></app-pageLoading>
+<div class="discountListsContainer_div">
+	<div *ngFor="let dct of discountsArr;">
+		<app-discountitem class="discountListWrapper_div" [discount]="dct"></app-discountitem>
+	</div>
+	<br>
+</div>
+
+<h2 class="center" *ngIf="isDiscountLoaded && discountsArr?.length == 0">Sorry!! No discount in this category yet.</h2>
+
+<div *ngIf="isDiscountLoaded && discountsArr?.length > 0" class="loadMore center">
+	<button class="loadMore_Btn button" type="button" (click)="loadMore()">
+		Load More Discounts
+	</button>
+</div>
+
+<!-- <app-footer id="appFooter_Comp"></app-footer> -->

@@ -1,0 +1,152 @@
+.backWrapper_div {
+  max-width: 60rem;
+  margin: 1em auto;
+}
+
+.backWrapper_div button {
+  background-color: #fff;
+  border: none;
+  font-size: 1em;
+  color: #757575;
+}
+
+.backWrapper_div button:hover {
+  color: #04a3ff;
+}
+
+.back_img {
+  width: 0.8em;
+  height: 0.8em;
+  display: inline-block;
+  margin: 0em 0.2em;
+}
+
+.back_p {
+  font-weight: 600;
+  display: inline;
+}
+
+.discountContainer_Div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 45rem;
+  margin: 1em auto;
+  position: relative;
+}
+
+.discountImg_Img {
+  width: 100%;
+}
+
+.discountImgErr_Img {
+  width: 5em;
+  display: block;
+  margin: 0 auto;
+  padding-top: 1em;
+}
+
+.discountData_Div {
+  padding: 0 1em 1em;
+}
+
+.discountData_Div h1,
+h3 {
+  margin: 0.5em 0 0.2em;
+}
+
+#likeIcon_Comp {
+  position: absolute;
+  right: 0;
+  margin: 0 1em;
+}
+
+.vcode_em {
+  padding: 0.5em 1em;
+  border: 2px dotted #04a3ff;
+  background: #f5f5f5;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.4em;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.1em;
+  margin: 0 1em;
+}
+
+.cp_fa:hover {
+  color: #04a3ff;
+}
+
+.buddyLink_a {
+  display: block;
+  background: #04a3ff;
+  color: #fff;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.2em;
+  margin: 2em auto;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.buddyLink_a:hover {
+  background: #14acff;
+  box-shadow: 0 2px 8px 1px rgba(64, 60, 67, 0.24);
+}
+
+.buddyLink_a:active {
+  background: #ff4365;
+}
+
+.getDirecWrapper_div {
+  margin-bottom: 2em;
+}
+
+.faIcon {
+  margin: 0.2em;
+}
+
+.faIcon:hover {
+  color: #04a3ff;
+}
+
+.faIcon:focus, .faIcon:active {
+  color: #ff4365;
+}
+
+.location {
+  display: block;
+  margin: 1em;
+}
+
+.budNm_h3 {
+  margin-top: 1.5em;
+}
+
+.discountContainer_Div ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.social_btn {
+  background-color: #ffffff;
+  border: none;
+}
+
+.social_btn > img {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+  ##Device = Nokia 8110 4G
+*/
+@media screen and (min-width: 240px) and (max-width: 767px) {
+  .discountContainer_Div {
+    box-shadow: none;
+  }
+}

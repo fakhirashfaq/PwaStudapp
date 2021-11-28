@@ -1,0 +1,141 @@
+.userIcon_div {
+  padding: .2em .2em .1em;
+}
+
+.menuImg {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+}
+
+.sideNav {
+  height: 100%;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  backdrop-filter: blur(100px);
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+}
+
+.sideNav a:active {
+  background-color: #ff4365;
+}
+
+.sideNav a:hover .faIcon {
+  color: #fff;
+}
+
+.sideNav .closeBtn {
+  position: absolute;
+  top: -0.4em;
+  right: 0;
+  font-size: 3em;
+  padding: 0.2em;
+}
+
+.mySideNav-backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+#mySidenav a.active {
+  background-color: #04a3ff;
+  color: #fff;
+}
+
+.closeArrow {
+  vertical-align: middle;
+  width: 20%;
+  display: inline-block;
+}
+
+.closeArrow::before {
+  content: "\003C";
+  margin: 0 0.6em;
+  font-size: 2em;
+}
+
+.authBtn {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.login-btn {
+  background:none;
+  padding:.5em;
+  border:none;
+  border-radius:1em;
+  font-size:1em;
+  outline: none;
+ }
+ 
+
+ .signup-btn {
+  background:#04a3ff;
+  padding:0.7em;
+  border-radius:2em;
+  font-size:1em;
+  border: none;
+ }
+ 
+
+.category-div {
+  padding-left: 1.2em;
+  width: 100%;
+}
+
+.second-row div {
+  width: 100%;
+}
+
+.lists li {
+  padding: 0.1em 0;
+  font-size: 1.2em;
+  padding-left: 1em;
+}
+
+.arrow::after {
+  content: "\003E";
+  float: right;
+  font-size: 1.5em;
+  margin: 0 1em;
+}
+
+.p-category {
+  color: #fff;
+  padding-left: 1em;
+  font-size: 1.2em;
+}
+
+.third-row {
+  display: flex;
+}
+
+.subCtg {
+  font-size: 1.5em;
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.closeSub::before {
+  content: "\003C";
+  margin: 0 0.5em;
+  font-size: 1.4em;
+  vertical-align: middle;
+}
+
+.faIcon {
+  margin-right: 0.5em;
+}
+
+.expand {
+  width: 100%;
+  display: block;
+}

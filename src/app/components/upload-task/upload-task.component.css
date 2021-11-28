@@ -1,0 +1,40 @@
+
+   .fileUploadWrapper_Div {
+    display: flex;
+    padding: 0.5rem;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    border: dashed 1px #979797;
+    /* margin-bottom: 1rem; */
+    margin: 1rem 0;
+  }
+   .fileUploadWrapper_Div .delete {
+    margin-left: 0.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  .delete:hover {
+    color: #d93025;
+  }
+  
+  .faIcons {
+    padding: 0.8em;
+    color: #979797;
+  }
+  
+   .fileUploadWrapper_Div .name {
+    font-size: 1em;
+    color: #353f4a;
+    margin: 0;
+  }
+   .fileUploadWrapper_Div .size {
+    font-size: 0.8em;
+    /* font-weight: 500; */
+    color: #a4a4a4;
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+   .fileUploadWrapper_Div .info {
+    width: 100%;
+  }

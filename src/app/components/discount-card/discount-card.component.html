@@ -1,0 +1,16 @@
+<div class="eidContainer_div">
+  <img class="profPic_img" src="{{profPic}}" loading="lazy" alt="Profile pic"/>
+  <div class="statusWrapper">
+    <p class="status clear" [ngClass]="setDiscountCardStyling()">
+      <strong>{{setDiscountCardStatus()}}</strong></p>
+  </div>
+  <h2 class="userNm center">{{!!currUser?.firstName ? (currUser?.firstName + " " + currUser?.lastName) : ""}}</h2>
+
+  <div class="userDetails">
+    <p class="center"><strong>Date of Birth: </strong>{{currUser?.dOB?.toDate()| date:'mediumDate'}}</p>
+    <p class="center"><strong>Expiry Date: </strong>{{currUser?.regDate?.toDate() | expiryDate | date:'mediumDate'}}</p>
+    <p class="center"><strong>University: </strong>{{currUser?.insNm}}</p>
+  </div>
+
+  <img class="logo_img" src="../../../assets/img/logo.png" alt="Stubud" loading="lazy" />
+</div>

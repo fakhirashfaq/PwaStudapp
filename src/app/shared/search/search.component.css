@@ -1,0 +1,84 @@
+/*-------------------- App --------------------*/
+.searchFormWrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.searchForm {
+  position: relative;
+  height: 2.4em;
+  border-radius: 2em;
+  display: flex;
+  background: #ecedef;
+}
+
+.searchForm:focus-within {
+  box-shadow: 0 1px 6px rgba(32,33,36,.28);
+}
+
+.searchIn {
+  font-size: 1em;
+  background: none;
+  color: #5a6674;
+  border: none;
+  appearance: none;
+  outline: none;
+  flex-grow: 2;
+  width: 9em;
+}
+
+
+.searchIn::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.searchBtn {
+  flex-grow: 0;
+  border: none;
+  margin: auto 0.8em;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.searchBtn:focus {
+  border: none;
+}
+
+.search_fa {
+  font-size: 1.5em;
+}
+
+.searchFormWrapper .clearIcon_Div {
+  color: #999;
+  font-size: 2em;
+  margin-right: 0.4em;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  flex-grow: 0;
+}
+
+.searchFormWrapper .clearIcon_Div:hover {
+  color: #04a3ff;
+}
+
+.searchFormWrapper .clearIcon_Div span {
+  transform: rotate(45deg);
+  display: block;
+}
+
+/*
+=======================Media Query Part====================================
+*/
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape) aka Non desktop device
+*/
+@media screen and (max-width: 767px) {
+  .searchFormWrapper {
+    width: 100% !important;
+  }
+}

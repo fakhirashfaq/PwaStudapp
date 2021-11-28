@@ -1,0 +1,36 @@
+.profPic_img {
+  width: 12em;
+  height: 12em;
+  display: block;
+  margin: 2em auto;
+  border-radius: 50%;
+}
+
+.actions_div, .cropperActions_Div {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em;
+}
+
+.profilePicUpload_Lbl {
+  background: #04a3ff;
+  color: #fff;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.2em;
+  /* margin: 0 auto; */
+  display: block;
+  font-size: 1.2em;
+}
+
+.profilePicUpload_Lbl:hover {
+    background: #14acff;
+    box-shadow: 0 2px 8px 1px rgba(64,60,67,.24);
+}
+
+#profilePicUpload_In {
+  display: none;
+}
+
+.imageCropperContainer_Div {
+  }

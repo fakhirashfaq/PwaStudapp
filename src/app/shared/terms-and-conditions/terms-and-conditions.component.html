@@ -1,0 +1,6 @@
+<div class="tAndCContainer_div">
+    <h4 class="stuBleu button tAndC_h4 required" (click)="switchCollapse()">{{text}} Terms and Conditions</h4>
+<div class="tAndC_div" [class.collapsed]="isCollapsed">
+    <ng-content></ng-content>
+</div>
+</div>

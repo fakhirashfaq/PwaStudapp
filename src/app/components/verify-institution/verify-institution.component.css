@@ -1,0 +1,54 @@
+.uniNm {
+  margin: 1em 0;
+  font-weight: 700;
+}
+
+.emailInputWrapper_div {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.uniEmail_in {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex-grow: 2;
+  display: inline-block;
+  padding-right: 0;
+}
+
+.domain_p {
+  display: inline-block;
+  -webkit-appearance: none !important;
+  border-left: 0px;
+  outline: none;
+  color: #0060df;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #fff;
+  text-align: right;
+  flex-grow: 1;
+  padding-left: 0;
+}
+
+.mnVerify_Par {
+  color: #000;
+  text-decoration: underline;
+  margin: 1em 0 1.5em;
+  display: block;
+  cursor: pointer;
+}
+
+.mnVerify_Par:hover {
+  color: #0056b3;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  */
+@media screen and (max-width: 767px) {
+}

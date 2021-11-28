@@ -1,0 +1,216 @@
+.container {
+  padding: 1em 1em;
+  max-width: 110em;
+  margin: 0 auto;
+}
+
+.istRowWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/*-------------------- Search --------------------*/
+
+/* .searchForm {
+  position: relative;
+  height: 2.4em;
+  border-radius: 2em;
+  display: flex;
+  background: #ecedef;
+}
+
+.searchForm:focus-within {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.searchIn {
+  font-size: 1em;
+  background: none;
+  color: #5a6674;
+  border: none;
+  appearance: none;
+  outline: none;
+  flex-grow: 2;
+  width: 9em;
+}
+
+.searchIn::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.searchBtn {
+  flex-grow: 0;
+  border: none;
+  margin: auto 0.8em;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.searchBtn:focus {
+  border: none;
+}
+
+.search_fa {
+  font-size: 1.5em;
+}
+
+.searchFormWrapper .clearIcon_Div {
+  color: #999;
+  font-size: 2em;
+  margin-right: 0.4em;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  flex-grow: 0;
+}
+
+.searchFormWrapper .clearIcon_Div:hover {
+  color: #04a3ff;
+}
+
+.searchFormWrapper .clearIcon_Div span {
+  transform: rotate(45deg);
+  display: block;
+} */
+
+/*-------------------- Search --------------------*/
+
+.secRowWrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.secRowWrapper > div {
+  margin: 1em 0;
+}
+
+.faqOptLink {
+  width: 4em;
+  height: 4em;
+  padding: 5em;
+  background-color: #04a3ff;
+  border-radius: 50%;
+  margin: 1em;
+  display: block;
+}
+
+.faqOptLink:hover {
+  box-shadow: 0 2px 10px #20212447;
+}
+
+.faqOptLink:hover p {
+  color: #04a3ff;
+  text-decoration: underline;
+}
+
+.faqOptImg {
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -moz-transform: translate(-50%, -50%); /* Firefox */
+  -webkit-transform: translate(-50%, -50%); /* Safari and Chrome */
+  -o-transform: translate(-50%, -50%); /* Opera */
+}
+
+.faqOptTxt {
+  position: absolute;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%); /* IE 9 */
+  -moz-transform: translateX(-50%); /* Firefox */
+  -webkit-transform: translateX(-50%); /* Safari and Chrome */
+  -o-transform: translateX(-50%); /* Opera */
+  padding: 0.6em 0;
+}
+
+.missingAns {
+  margin: 2em 0 !important;
+  /* Override secRowWrapper > div */
+}
+
+.helpOptsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.helpOpt {
+  padding: 1.2em 3.4em;
+  background-color: #ecedef;
+  margin: 0 0.4em;
+}
+
+.thirdRow {
+  margin-top: 3em;
+}
+
+.popQsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.popQsImg {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  margin-right: 1em;
+  vertical-align: middle;
+}
+
+.thirdRow h3 {
+  display: inline-block;
+}
+
+.popQuesOpt {
+  display: block;
+  margin: 1em 0;
+}
+
+.forthRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 1em;
+  background-color: #ecedef;
+  margin: 5em 0 0; /* Change back to 1em 0 once popular Q is back */
+  flex-wrap: wrap;
+}
+
+.forthRow p {
+  margin: 1em 0;
+}
+
+.feedbackOpts {
+  display: flex;
+  width: 10em;
+  margin: 1em 0;
+}
+
+.feedbackOpt {
+  width: 50%;
+}
+
+.feedbackVal {
+  display: inline;
+}
+
+.feedbackOpt button {
+  outline: none;
+  border: none;
+}
+
+.feedbackOpt button:hover {
+  background: none;
+}
+
+.faIcon {
+  vertical-align: middle;
+  margin: 0 1em;
+  display: inline-block;
+}
+
+.faIcon:hover {
+  color: #04a3ff;
+}

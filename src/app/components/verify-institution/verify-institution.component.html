@@ -1,0 +1,59 @@
+<div class="authContainer_Div">
+
+  <h1 class="center">Verify Institution</h1>
+  <h4 class="center uniNm">{{currIns?.name | uppercase}}</h4>
+  <h4 class="center greyText" *ngIf="!isManualVerification">Tell us your institution email address
+    so we can send you a
+    verification link</h4>
+
+  <h4 class="center" *ngIf="isManualVerification">We can accept official documentation as evidence
+    of your student status</h4>
+
+  <h4 class="center" *ngIf="isManualVerification">Please upload a photo or scan of one of the
+    following: Institution student card, Acceptance letter, Academic transcript*</h4>
+
+
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()" *ngIf="!isManualVerification && !!currUser && !!currIns">
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" for="emailInput_In">Email</label>
+      <div class="emailInputWrapper_div">
+        <input class="authInput uniEmail_in" id="emailInput_In" formControlName="emailFormC" type="text"
+          placeholder="Your Institution username/Id" />
+        <input class="authInput domain_p" id="" type="text" placeholder="" value="@{{currIns?.domains[0]}}" disabled />
+      </div>
+
+      <div *ngIf="isFormSubmitted && formContRef.emailFormC?.errors || formGroup?.errors?.insEmailEqEmail"
+        class="validations_Div">
+        <p *ngIf="formContRef.emailFormC?.errors?.required">Email is required.</p>
+        <p *ngIf="formContRef.emailFormC?.errors?.pattern">Sorry, only letters (a-z), numbers (0-9), and periods (.) are
+          allowed.</p>
+        <p *ngIf="formGroup.errors?.insEmailEqEmail">Your institution email cannot be the same as your personal email.
+        </p>
+        <p *ngIf="formContRef.emailFormC?.errors?.insEmailUsed">This email has already been used.</p>
+      </div>
+    </div>
+    <app-stubud-button id="createAccSubmit_Comp" [expand]="true" [buttonType]="'submit'" *ngIf="!isManualVerification">
+      Send
+    </app-stubud-button>
+
+  </form>
+
+  <app-manual-verifications *ngIf="isManualVerification"></app-manual-verifications>
+
+
+
+
+  <p class="center mnVerify_Par" (click)="swapVerification()">
+    {{isManualVerification ? 'Email Verification' : 'Manual Verification'}}
+  </p>
+  <div *ngIf="isFormSubmitted" class="validations_Div">
+    <p *ngIf="!!errorMessage">{{errorMessage}}<br> For any support, use this <a
+        href="mailto:services@stubud.com?subject=Support&body={{errorMessage}}">link</a> to contact and send us your
+      error. We will get back to your as soon as possible.
+    </p>
+  </div>
+  <p class="right">
+    <a href="mailto:services@stubud.com?subject=Support">Having Problems? Support</a>
+  </p>
+  <p class="center greyText">{{currUser?.email}} - <a routerLink="" (click)="logout()">Log out</a></p>
+</div>

@@ -1,0 +1,92 @@
+<app-header></app-header>
+
+<div class="backWrapper_div">
+  <button type="button" class="greyText button underline" (click)="goBack()">
+    <img class="back_img" title="Back" src="../../../assets/icons/left-arrow.svg" alt="Back" />BACK
+  </button>
+</div>
+
+<div class="discountContainer_Div">
+  <img class="discountImg_Img" src="{{currDiscount?.imgUrl}}" alt="{{currDiscount?.dcPct}}" loading="lazy"
+    onerror="this.onerror=null;this.src='../../assets/img/spinner.gif';this.className='discountImgErr_Img';" />
+  <div class="discountData_Div">
+    <h1 class="center stuBleu">{{currDiscount?.dcPct}}% Student discount</h1>
+    <app-like-unlike id="likeIcon_Comp" [likeState]="currDiscount.isLiked" [discountID]="currDiscount.id">
+    </app-like-unlike>
+    <h2 class="center clear">at <a href="//{{currBuddy?.url}}" target="_blank" rel="noreferrer">{{currBuddy?.name}}</a></h2><br>
+
+    <div class="relative center" *ngIf="currDiscount.type == '2'; else offline">
+      <h4 class="center" *ngIf="(!!vcode)">Copy code and use it at {{currBuddy.name}}.</h4>
+      <app-stubud-button *ngIf="!(!!vcode)" (clickEvtEmitter)="generateCode()">Generate code</app-stubud-button>
+      <em class="vcode_em" *ngIf="(!!vcode)">{{vcode}}</em>
+      <fa-icon class="faIcon button greyText" *ngIf="(!!vcode)" [icon]="faCopy" size="2x" title="Copy code to Clipboard"
+        (click)="copyVcodeToClipboard()"></fa-icon>
+      <a class="buddyLink_a" *ngIf="(!!vcode)" href="//{{currBuddy?.url}}" target="_blank" rel="noreferrer"
+        title="Follow link to navigate to buddy's site">
+        <fa-icon class="faIcon" [icon]="faExternalLinkAlt" size="1x"></fa-icon>
+        Open {{currBuddy?.name}} website
+      </a>
+      <h4><em *ngIf="(novcode)">No discount code available at the moment. Please try again later.</em></h4>
+      <h4><em *ngIf="(!canGenerate)">You can only generate a code each 10 mins.</em></h4>
+    </div>
+
+    <ng-template #offline>
+      <div class="getDirecWrapper_div center">
+        <app-stubud-button (clickEvtEmitter)="showLocations()">Show available locations
+          <fa-icon class="faIcon" [icon]="faMapMarkedAlt" size="1x"></fa-icon>
+        </app-stubud-button>
+
+        <div class="locations_div">
+          <h3 *ngFor="let location of locations">
+            <a class="location"
+              href="https://maps.google.com/maps?q={{location.geopoint.latitude}},{{location.geopoint.longitude}}"
+              target="_blank" rel="noreferrer" title="Open in Google Maps">
+              {{location.address}}
+              <fa-icon class="faIcon" [icon]="faDirections" size="1x"></fa-icon>
+            </a>
+          </h3>
+          <h4><em *ngIf="!!locations && locations.length === 0">No stores available at the moment for this discount. Please try again later.</em></h4>
+        </div>
+      </div>
+
+    </ng-template>
+
+    <h3>About this Student Discount</h3>
+    <p>
+      {{currDiscount?.details}}<br />
+    </p>
+
+    <app-terms-and-conditions>{{currDiscount?.terms}}</app-terms-and-conditions>
+
+    <hr>
+    <h3 class="budNm_h3">{{currBuddy?.name}}</h3>
+
+    <app-read-more>
+      {{currBuddy?.details}}
+    </app-read-more>
+
+    <ul class="socials lists clear">
+      <li>
+        <button title="Share to Facebook" class="social_btn button" shareButton="facebook"
+          #fbBtn="shareButton">
+          <img class="" src="../../../assets/icons/facebook.png" alt="Facebook" loading="lazy"/>
+        </button>
+      </li>
+      <li>
+        <button title="Share to Twitter" class="social_btn button" shareButton="twitter"
+          #twtBtn="shareButton">
+          <img class="" src="../../../assets/icons/twitter.png" alt="Twitter" loading="lazy"/>
+        </button>
+      </li>
+      <li>
+        <button title="Copy to clipboard" class="social_btn button" (click)="copyToClipboard()">
+          <fa-icon class="cp_fa" [icon]="faLink" size="2x"></fa-icon>
+        </button>
+      </li>
+    </ul>
+
+  </div>
+
+</div>
+
+<!-- <app-footer></app-footer> -->

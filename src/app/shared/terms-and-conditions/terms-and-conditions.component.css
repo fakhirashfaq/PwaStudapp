@@ -1,0 +1,15 @@
+.tAndCContainer_div {
+  margin-bottom: 1em;
+}
+
+.tAndC_h4 {
+  margin: 0.2em 0;
+}
+
+.tAndC_h4:hover {
+  text-decoration: underline;
+}
+
+div.collapsed {
+  display: none;
+}

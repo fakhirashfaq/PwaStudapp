@@ -1,0 +1,16 @@
+<div class="convertUserContainer_Div center">
+    <div class="closeIcon_Div button greyText" (click)="close()">
+        <span title="Close">&#43;</span>
+    </div>
+    <img class="stuBudLogo center" src="../../../assets/img/logo.png" alt="Stubud" loading="lazy"/>
+    <div class="content_Div">
+        <h4>Start getting discount wherever you go.</h4>
+    </div>
+    <div class="convertUserButtons_Div button">
+
+        <a (click)="goToPage('auth/login')" class="signInBtn button center"><span>
+            <fa-icon [icon]="faUser" size="1x" class="stuBleu faIcon"></fa-icon>
+          </span>Login</a>
+        <a (click)="goToPage('auth/register/')" class="signUpBtn button">Sign Up</a>
+    </div>
+</div>

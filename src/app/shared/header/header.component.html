@@ -1,0 +1,44 @@
+<header>
+  <div class="mainHeaderWrap_div">
+    <app-sidebar id="sideBar_Comp" [user]="user"></app-sidebar>
+
+    <div class="stuBudLogoDiv">
+      <!-- Stubud Logo -->
+      <a routerLink=""  title="Stubud" aria-label="Stubud">
+        <img class="stuBudLogo" src="../../../assets/img/logo.png" alt="Stubud" loading="lazy" />
+      </a>
+    </div>
+
+
+    <div class="searchCompDiv">
+      <app-search></app-search>
+    </div>
+
+    <div class="quick-options-Fav-wrap button">
+      <button type="button" class="fav_btn button" (click)="goToPageIfAuthorized('favorites/')"  title="My Favorite Discounts" aria-label="My Favorite Discounts">
+        <img src="../../../assets/img/unlike.png" alt="My Favorites" title="My Favorites" loading="lazy" />
+      </button>
+    </div>
+
+    <div class="authOptWrapper_div" *ngIf="!(!!user)">
+      <a routerLink="/auth/login" class="signInBtn button anchorClear" title="Login" aria-label="Login"><span>
+          <fa-icon [icon]="faUser" size="1x" class="stuBleu faIcon"></fa-icon>
+        </span>Login</a>
+      <a routerLink="/auth/register/create-account" class="signUpBtn button anchorClear" title="Sign Up" aria-label="Sign Up">Sign Up</a>
+    </div>
+
+    <div class="authOptWrapper_div" *ngIf="!!user">
+      <a routerLink="/user" class="signInBtn button anchorClear" title="My STUBUD" aria-label="My STUBUD">
+        <span>
+          <fa-icon [icon]="faUser" size="1x" class="stuBleu faIcon"></fa-icon>
+        </span>
+        My STUBUD</a>
+      <a class="signUpBtn button anchorClear" (click)="signOut()" title="Sign Out" aria-label="Sign Out">Sign Out</a>
+    </div>
+
+  </div>
+
+</header>
+<!-- <div class="navbar-div"> Category disabled
+  <app-nav-bar></app-nav-bar>
+</div> -->

@@ -1,0 +1,87 @@
+.socialNetSignIn_Div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* flex-direction: column; */
+    /* justify-content: space-between;
+    width: 100%; */
+  }
+  
+  .social-btn {
+    width: 15em;
+    height: 2.7em;
+    border-radius: 0.15em;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+    /*position: relative;  For child positioning */
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0.4em auto;
+  }
+  .social-btn .social-icon-wrapper {
+    /* White box behind logo */
+  /*   display: inline-block; */
+    margin-top: 0.09em;
+    margin-left: 0.09em;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 0.1em;
+    padding: 0.21em;
+    flex-grow: 0;
+  }
+  
+  .fbSpecific_Div{
+    background-color: #4267B2;
+  }
+  
+  .fbSpecific_Div svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .googleSpecific_Div {
+    background-color: #4285f4;
+  }
+  
+  .googleSpecific_Div > div:first-of-type{
+    background-color: #fff;
+  }
+  
+  .social-btn .social-icon {
+    /* Logo */
+    width: 1.2em;
+    display: block;
+    margin: 50% auto;
+    transform: translateY(-50%);
+  }
+  
+  .social-btn .btn-text {
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    flex-grow: 1;
+    line-height: 2.5em;
+  }
+  
+  .btn-text > p {
+    text-align: center;
+    margin: 0;
+  }
+  
+  .fbSpecific_Div:hover {
+    box-shadow: 0 0 6px #4267B2;
+  }
+  .googleSpecific_Div:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+  .googleSpecific_Div:active {
+    background: #1669f2;
+  }

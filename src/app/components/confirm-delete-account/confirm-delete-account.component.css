@@ -1,0 +1,63 @@
+.confirmAccDelContainer_Div {
+  position: relative;
+  background: #fff;
+  border-radius: 0.25em 0.25em 0.4em 0.4em;
+  overflow: hidden;
+  max-width: 20rem;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+
+.confirmAccDelContainer_Div .content_Div {
+  padding: 0 2em 2em;
+}
+
+.confirmAccDelContainer_Div .closeIcon_Div {
+  position: absolute;
+  right: 0;
+  font-size: 2.4em;
+  margin-right: 0.15em;
+  line-height: 1em;
+}
+
+.confirmAccDelContainer_Div .closeIcon_Div:hover {
+  color: #04a3ff;
+}
+.confirmAccDelContainer_Div .closeIcon_Div span {
+  transform: rotate(45deg);
+  display: block;
+}
+
+.confirmAccDelButtons_Div a {
+  padding: 0.7em 1.2em;
+  border-radius: 2em;
+  margin: 0 0.2em;
+}
+
+.delBtn {
+  width: 8em;
+  display: inline-block;
+}
+
+.delBtn:hover {
+  background: #04a3ff;
+  color: #fff;
+}
+
+.delBtn:hover .faIcon {
+  color: #fff;
+}
+
+.delBtn span {
+  margin-right: 0.6em;
+}
+
+.cancelBtn {
+  background: #04a3ff;
+  color: #fff;
+}
+
+.cancelBtn:hover {
+  color: #fff;
+  box-shadow: 0 0 6px #04a3ff;
+}

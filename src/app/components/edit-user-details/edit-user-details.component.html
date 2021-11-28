@@ -1,0 +1,91 @@
+<div class="authContainer_Div">
+
+  <h1 class="center">Edit your details</h1>
+  <h4 class="center greyText">This information will be used to create your
+    Stubud card, please make sure it's correct.</h4>
+
+  <form *ngIf="!!currUser" [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" for="firstNm_In">First Name</label>
+      <input class="authInput" id="firstNm_In" formControlName="fNameFormC" type="text" placeholder="First Name" />
+      <div *ngIf="isFormSubmitted && formContRef.fNameFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.fNameFormC?.errors?.required">First Name is required</p>
+        <p *ngIf="formContRef.fNameFormC?.errors?.pattern">No numbers allowed</p>
+      </div>
+    </div>
+
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" for="lastNm_In">Last Name</label>
+      <input class="authInput" id="lastNm_In" formControlName="lNameFormC" type="text" placeholder="Last Name" />
+      <div *ngIf="isFormSubmitted && formContRef.lNameFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.lNameFormC?.errors?.required">Last Name is required</p>
+        <p *ngIf="formContRef.lNameFormC?.errors?.pattern">No numbers allowed</p>
+      </div>
+    </div>
+
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" >Gender</label>
+      <div class="flexWrapper">
+
+        <input type="radio" formControlName="genderFormC" value="Male" id="gender-male" />
+        <label class="button" for="gender-male">Male</label>
+
+        <input type="radio" formControlName="genderFormC" value="Female" id="gender-female" />
+        <label class="button" for="gender-female">Female</label>
+
+        <input type="radio" formControlName="genderFormC" value="Rather not say" id="gender-ratherNotSay" />
+        <label class="button" for="gender-ratherNotSay">Rather not say</label>
+
+      </div>
+
+      <div *ngIf="isFormSubmitted && formContRef.genderFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.genderFormC?.errors?.required">Gender is required</p>
+      </div>
+    </div>
+
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" >Date of Birth</label>
+      <!-- <input id="lastNm_In" formControlName="lNameFormC" type="text" placeholder="Last Name" /> -->
+      <div class="inputDoBWrapper_Div">
+        <input class="authInput" id="inputDate_In" name="day" type="text" formControlName="dobDayFormC"
+          placeholder="DD" />
+        <!-- <input id="inputMonth_Sel" name="month" type="text" placeholder="Month" /> -->
+        <select id="inputMonth_Sel" name="DOBMonth" formControlName="dobMonthFormC" (change)="changeMonth($event)">
+          <option name="" [value]="null" disabled selected hidden>Month</option>
+          <option [value]="01">January</option>
+          <option [value]="02">February</option>
+          <option [value]="03">March</option>
+          <option [value]="04">April</option>
+          <option [value]="05">May</option>
+          <option [value]="06">June</option>
+          <option [value]="07">July</option>
+          <option [value]="08">August</option>
+          <option [value]="09">September</option>
+          <option [value]="10">October</option>
+          <option [value]="11">November</option>
+          <option [value]="12">December</option>
+        </select>
+        <input class="authInput" id="inputYear_In" name="year" formControlName="dOBFormC" type="text" placeholder="YYYY"
+          formControlName="dobYearFormC" />
+      </div>
+      <div
+        *ngIf="isFormSubmitted && (formContRef.dobDayFormC?.errors || formContRef.dobMonthFormC?.errors || formContRef.dobYearFormC?.errors || formGroup?.errors)"
+        class="validations_Div">
+        <p
+          *ngIf="formContRef.dobDayFormC?.errors?.required || formContRef.dobMonthFormC?.errors?.required || formContRef.dobYearFormC?.errors?.required">
+          Date of birth is required</p>
+        <p *ngIf="formGroup?.errors?.dateInvalid">Date is invalid</p>
+        <p *ngIf="formGroup?.errors?.ageNotAllowed">You need to be at least 15 years old</p>
+      </div>
+    </div>
+    <app-stubud-button id="createAccSubmit_Comp" [expand]="true" [buttonType]="'submit'">Continue
+    </app-stubud-button>
+  </form>
+
+  <div *ngIf="isFormSubmitted" class="validations_Div">
+    <p *ngIf="!!errorMessage">{{errorMessage}}<br> For any support, use this <a
+        href="mailto:services@stubud.com?subject=Support&body={{errorMessage}}">link</a> to contact and send us your
+      error. We will get back to your as soon as possible.
+    </p>
+  </div>
+</div>

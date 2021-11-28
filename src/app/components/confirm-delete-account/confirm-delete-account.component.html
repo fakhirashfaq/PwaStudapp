@@ -1,0 +1,17 @@
+<div class="confirmAccDelContainer_Div center">
+    <div class="closeIcon_Div button greyText" (click)="close()">
+        <span title="Close">&#43;</span>
+    </div>
+    <img class="stuBudLogo center" src="../../../assets/img/logo.png" alt="Stubud" loading="lazy" />
+    <div class="content_Div">
+        <h4>Is it too late to say sorry?</h4>
+    </div>
+    <div class="confirmAccDelButtons_Div button">
+
+        <a (click)="deleteAcc()" class="delBtn button center"><span>
+                <fa-icon [icon]="faTrashAlt" size="1x" class="red"></fa-icon>
+            </span>Delete
+        </a>
+        <a (click)="close()" class="cancelBtn button">Cancel</a>
+    </div>
+</div>

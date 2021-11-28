@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<div class="myStdContainer_div">
+  <div class="tabs">
+
+    <input type="radio" name="tabs" id="tabtwo" checked="checked">
+    <label class="button" for="tabtwo">STUDENT ID</label>
+    <div class="tab">
+      <app-discount-card *ngIf="!!currUser" [currUser]="currUser"></app-discount-card>
+    </div>
+
+    <input type="radio" name="tabs" id="tabone">
+    <label class="button" for="tabone">PROFILE
+      <fa-icon *ngIf="!(currUser?.isAccValid) || !(!!currUser?.profilePic)" class="red" [icon]="faExclamationCircle"
+        size="1x"></fa-icon>
+    </label>
+    <div class="tab">
+      <app-user-profile *ngIf="!!currUser" [currUser]="currUser"></app-user-profile>
+    </div>
+
+  </div>
+</div>

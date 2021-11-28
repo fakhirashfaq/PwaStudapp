@@ -1,0 +1,15 @@
+.page-loading{
+  position: relative;
+  z-index: 1;
+  visibility: unset;
+  opacity: 0.8;
+  transition: .1s opacity linear;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.page-loading > img {
+  width: 5em;
+  height: 5em;
+}

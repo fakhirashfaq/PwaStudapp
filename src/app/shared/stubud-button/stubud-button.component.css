@@ -1,0 +1,19 @@
+.stuButton_btn {
+  background: #04a3ff;
+  color: #fff;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.2em;
+  margin: 0 auto;
+  display: block;
+  font-size: 1.2em;
+}
+
+.stuButton_btn:hover {
+  background: #14acff;
+  box-shadow: 0 2px 8px 1px rgba(64,60,67,.24);
+}
+
+.stuButton_btn:active {
+  background: #ff4365;
+}

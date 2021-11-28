@@ -1,0 +1,22 @@
+<div class="discountItemContainer_Div button" title="Get {{discount?.dcPct}}% Discount at {{discount?.bdNm}}">
+  <a class="anchorClear" [routerLink]="['/discount', discount.id]">
+    <div class="ribbon" *ngIf='isEnding'>- {{endingDay}} DAY(S)</div>
+    <img class="discountImg_Img" src="{{discount?.imgUrl}}" alt="Get {{discount?.dcPct}}% Discount" loading="lazy" />
+    <p class="discountDetails_Par center">Get {{discount?.dcPct}}% Discount</p>
+    <div class="getDisAndLike_Div">
+
+      <img class="bdImg_img" src="{{discount?.bdImg}}" alt="{{discount?.bdNm}}" loading="lazy" title="{{discount?.bdNm}}"/>
+      <div class="dctDetailsWrapper">
+        <p class="dcLct_p clear">{{getTypeLabel(discount?.type)}}</p>
+        <span class="likeWrapper_span">
+          <app-like-unlike class="likeIcon_Comp" [likeState]="discount?.isLiked" [discountID]="discount?.id"
+            (likeUnlikeEvtEmitter)="persistLikeUnlikeLocal($event)" (click)="$event.stopPropagation()">
+          </app-like-unlike>
+          <p class="likeNum_Par">{{ discount?.likeCnt | number }}</p>
+        </span>
+      </div>
+    </div>
+  </a>
+
+
+</div>

@@ -1,0 +1,42 @@
+.errPageContainer_Div {
+  width: 50%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.errPageContainer_Div > .sadEmj_span {
+  display: block;
+  margin: 1em auto;
+  font-size: 5em;
+  text-align: center;
+}
+
+.errPageContainer_Div> .errorCode_HTwo {
+  font-size: 5em;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  color: #04a3ff;
+  text-align: center;
+  margin-right: -0.5em;
+}
+
+.errPageContainer_Div > .errorMsg_Par {
+  font-size: 1.2em;
+  color: #313131;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  margin: 3em 0;
+  text-align: center;
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+@media screen and (max-width: 767px) {
+  .errPageContainer_Div{
+    width: 100%;
+    padding: 1em;
+  }
+
+}

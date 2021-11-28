@@ -1,0 +1,32 @@
+<!-- For desktop devices -->
+<form class="dctTypeFilterContainer_form" [formGroup]="discountTypeFilterRFormG">
+  <div class="discountTypeSwitchDiv" [ngClass]="isSelected ? 'showDb' : 'hideDb'">
+    <input id="dct_one_Id" formControlName="discountTypeSwitchRFormC" value="1" type="radio"
+      (change)="updateDiscountLocationType()" /><label for="dct_one_Id" class="switchLabel button" title="In-Store Discounts" aria-label="In-Store Discounts">In</label>
+
+    <input id="dct_zero_Id" formControlName="discountTypeSwitchRFormC" value="0" type="radio"
+      (change)="updateDiscountLocationType()" /><label for="dct_zero_Id" class="switchLabel button" title="All Discounts" aria-label="All Discounts">ALL</label>
+
+    <input id="dct_two_Id" formControlName="discountTypeSwitchRFormC" value="2" type="radio"
+      (change)="updateDiscountLocationType()" /><label for="dct_two_Id" class="switchLabel button" title="Online Discounts" aria-label="Online Discounts">On</label>
+
+    <div class="switchIndicator"></div>
+  </div>
+</form>
+
+<!-- For Mobile devices -->
+<label class="dropdown">
+
+  <div class="dd-button button">
+    {{selectedType}}
+  </div>
+
+  <input type="checkbox" class="dd-input" id="typeIn">
+
+  <ul class="dd-menu">
+    <li class="button" (click)="updateDiscountLocationTypeDb('0')" title="All Discounts" aria-label="All Discounts">All</li>
+    <li class="button" (click)="updateDiscountLocationTypeDb('1')" title="In-Store Discounts" aria-label="In-Store Discounts">In-Store</li>
+    <li class="button" (click)="updateDiscountLocationTypeDb('2')" title="Online Discounts" aria-label="Online Discounts">Online</li>
+  </ul>
+
+</label>

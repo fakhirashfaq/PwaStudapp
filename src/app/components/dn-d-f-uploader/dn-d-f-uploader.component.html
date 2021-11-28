@@ -1,0 +1,15 @@
+<div class="dndContainer_Div" appDnd (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+
+    <form [formGroup]="formGroupFiles">
+        <input id="fileDropRef" type="file" accept=".jpg, .png, .pdf" formControlName="filesFormC" multiple
+            (change)="onDrop($any($event).target.files)" #fileDropRef />
+        <h3>Drag and drop files here</h3>
+        <h3>or</h3>
+        <label for="fileDropRef">Browse for files</label>
+    </form>
+    <p class="greyText">Allowed filetypes: JPEG, PNG, PDF</p>
+</div>
+
+<div class="filesContainer_Div" *ngFor="let file of files; let i = index">
+    <app-upload-task [userId]="currUser?.uid" [fileToUpload]="file" [index]="i" (deleteReqEvtEmitter)="deleteFile($event)" (completedEvtEmitter)="onComplete()"></app-upload-task>
+</div>

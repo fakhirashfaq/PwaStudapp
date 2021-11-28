@@ -1,0 +1,31 @@
+<div class="fileUploadWrapper_Div" *ngIf="percentage$ | async as pct">
+
+    <fa-icon [icon]="faFile" size="1x" class="faIcons"></fa-icon>
+      <div class="info">
+        <h4 class="name">
+          {{ fileToUpload?.name }}
+        </h4>
+        <p class="size">
+          {{ formatBytes(fileToUpload?.size) }}
+        </p>
+        <app-progress [progress]="pct" max="100"></app-progress>
+      </div>
+      <fa-icon [icon]="faTrashAlt" size="1x" class="delete faIcons" (click)="deleteFile()"></fa-icon>
+
+</div>
+
+<!-- <div *ngIf="(snapshot$ | async) as snap">
+
+    {{ snap.bytesTransferred }} of {{ snap.totalBytes }}
+
+    <div *ngIf="downloadURL as url">
+        <h3>Results!</h3>
+        <img [src]="url"><br>
+        <a [href]="url" target="_blank" rel="noreferrer" rel="noopener">Download Me!</a>
+    </div>
+    <hr>
+
+    <button (click)="task.pause()" class="button is-warning" [disabled]="!isActive(snap)">Pause</button>
+    <button (click)="task.cancel()" class="button is-danger" [disabled]="!isActive(snap)">Cancel</button>
+    <button (click)="task.resume()" class="button is-info" [disabled]="!(snap?.state === 'paused')">Resume</button>
+</div> -->

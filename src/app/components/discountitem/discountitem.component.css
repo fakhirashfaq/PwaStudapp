@@ -1,0 +1,72 @@
+.discountItemContainer_Div {
+  border-radius: 0.5em;
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.discountItemContainer_Div:hover {
+  box-shadow: 0 0 6px #818181;
+}
+
+.ribbon {
+  width: 12em;
+  padding: 0.5em;
+  position: absolute;
+  text-align: center;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  background-color: #ff4365;
+  left: -3em;
+  top: 2em;
+  box-shadow: 0 0 15px rgba(0,0,0,.2);
+}
+
+.discountImg_Img {
+  height: 12em;
+  object-fit: cover;
+}
+
+.discountDetails_Par {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.getDisAndLike_Div {
+  padding: 0 1em 1em;
+}
+
+.bdImg_img {
+  width: 20%;
+}
+
+.dctDetailsWrapper {
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+}
+
+.likeWrapper_span {
+  margin: 0.2em;
+  vertical-align: top;
+  float: right;
+}
+
+.likeIcon_Comp {
+  display: inline-block;
+}
+
+.likeNum_Par {
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: super;
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers */
+@media (max-width: 1024px) {
+  .discountImg_Img {
+    height: 9em;
+  }
+}
+

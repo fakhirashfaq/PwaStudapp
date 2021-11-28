@@ -1,0 +1,50 @@
+<header>
+  <a routerLink="" title="Stubud">
+    <img class="stuBudLogo" src="../../../assets/img/logo.png" alt="Stubud" loading="lazy" />
+  </a>
+
+</header>
+<hr>
+<div class="authContainer_Div">
+
+  <h3 class="center greyText">Get student discounts on all your favorite brands</h3>
+
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" for="emailInput_In">Email</label>
+      <input id="emailInput_In" formControlName="emailFormC" type="text" placeholder="Your personal Email Address" />
+      <div *ngIf="isFormSubmitted && formContRef.emailFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.emailFormC?.errors?.required">Email is required</p>
+        <p *ngIf="formContRef.emailFormC?.errors?.email">Email must be a valid email address</p>
+      </div>
+    </div>
+
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" for="pass_In">Password</label>
+      <input id="pass_In" formControlName="pas
+        sFormC" [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Password" formControlName="passFormC" />
+      <fa-icon class="faIcons_Comp button" [icon]="isPasswordVisible ? faEye : faEyeSlash" size="1x"
+        (click)="showPassword()">
+      </fa-icon>
+      <div *ngIf="isFormSubmitted && formContRef.passFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.passFormC?.errors?.required">Password is required</p>
+      </div>
+    </div>
+
+    <p><a routerLink="/auth/change-password" class="stuBleu">Forgot Password?</a></p>
+    <app-stubud-button id="signInSubmit_Comp" [expand]="true" [buttonType]="'submit'">
+      Login
+    </app-stubud-button>
+  </form>
+
+  <div *ngIf="isFormSubmitted" class="validations_Div">
+    <p *ngIf="!!errorMessage">{{errorMessage}}<br> For any support, use this <a
+        href="mailto:services@stubud.com?subject=Support&body={{errorMessage}}">link</a> to contact and send us your
+      error. We will get back to your as soon as possible.
+    </p>
+  </div>
+  <p class="alternativeSignIn_Par center">Or sign in using</p>
+  <app-social-login></app-social-login><!-- Social Sign in -->
+  <p class="center">Don't have an account yet? <a routerLink="/auth/register/create-account"
+      class="stuBleu underline button">Sign up</a> for free</p>
+</div>

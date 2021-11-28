@@ -1,0 +1,126 @@
+<header>
+    <a routerLink="" title="Stubud">
+        <img class="stuBudLogo" src="../../../assets/img/logo.png" alt="Stubud" loading="lazy" />
+    </a>
+
+</header>
+<hr>
+
+<div class="container">
+
+    <div class="istRowWrapper">
+        <h1 class="">
+            Frequently Asked Questions
+        </h1>
+
+        <!-- <div _ngcontent-aun-c33="" class="searchFormWrapper">
+            <form _ngcontent-aun-c33="" novalidate="" class="searchForm ng-untouched ng-pristine ng-valid"><button
+                    _ngcontent-aun-c33="" type="submit" title="Search" aria-label="Search" class="searchBtn button">
+                    <fa-icon [icon]="faSearch" size="1x" id="search_submit submit-button" class="search_fa"></fa-icon>
+                </button><input _ngcontent-aun-c33="" type="search" placeholder="Search" title="Search"
+                    aria-label="Search" class="searchIn">
+                <div _ngcontent-aun-c33="" title="Clear search" aria-label="Clear search" class="clearIcon_Div button">
+                    <span _ngcontent-aun-c33="">+</span>
+                </div>
+            </form>
+            <p><em>Find topics by entering terms in the search box.</em></p>
+        </div> -->
+
+    </div>
+
+    <div class="secRowWrapper">
+
+        <div class="faqOptWrapper">
+            <a class="faqOptLink button center">
+                <img class="faqOptImg" src="../../../assets/icons/webBrowser.png" alt="interface" />
+                <p class="faqOptTxt">Using Stubud</p>
+            </a>
+        </div>
+
+        <div class="faqOptWrapper">
+            <a class="faqOptLink button center">
+                <img class="faqOptImg" src="../../../assets/icons/form.png" alt="Form" />
+                <p class="faqOptTxt">Login & Registration</p>
+            </a>
+        </div>
+
+        <div class="faqOptWrapper">
+            <a class="faqOptLink button center">
+                <img class="faqOptImg" src="../../../assets/icons/cog.png" alt="Settings" />
+                <p class="faqOptTxt">Account Settings</p>
+            </a>
+        </div>
+
+        <div class="missingAns center">
+            <img class="helpImg" src="../../../assets/icons/help.png" alt="Help" />
+            <p>Can't find an answer?</p>
+
+            <div class="helpOptsWrapper">
+                <a class="helpOpt button" href="mailto:services@stubud.com?subject=Support&body=">
+                    <img class="helpOptImg" src="../../../assets/icons/mail.png" alt="Email" />
+                    <p class="helpOptTxt clear">Email Us</p>
+                </a>
+
+                <a class="helpOpt button" href="tel:+23057524467">
+                    <img class="helpOptImg" src="../../../assets/icons/call.png" alt="Call" />
+                    <p class="helpOptTxt clear">Call Us</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="thirdRow hidden">
+        <img class="popQsImg" src="../../../assets/icons/fav.png" />
+        <h3>Popular Questions</h3>
+
+        <div class="popQsContainer">
+            <div class="popQsWrapper">
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+            </div>
+
+            <div class="popQsWrapper">
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+            </div>
+
+            <div class="popQsWrapper">
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+                <a class="popQuesOpt anchorClear" href="">Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="forthRow">
+        <p class="clear">Did you find what you where looking for?</p>
+
+        <div class="feedbackOpts">
+            <span class="feedbackOpt">
+                <p class="feedbackVal">{{dislikes}}</p>
+                <button type="button" (click)="dislikeFeed()" [disabled]="isSaveInProgress">
+                    <fa-icon [icon]="faThumbsDown" size="lg" class="faIcon button"></fa-icon>
+                </button>
+            </span>
+            <span class="feedbackOpt">
+                <p class="feedbackVal">{{likes}}</p>
+                <button type="button" (click)="likeFeed()" [disabled]="isSaveInProgress">
+                    <fa-icon [icon]="faThumbsUp" size="lg" class="faIcon button"></fa-icon>
+                </button>
+            </span>
+        </div>
+    </div>
+
+
+</div>

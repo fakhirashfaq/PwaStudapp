@@ -1,0 +1,127 @@
+<div class="wrapper">
+    <div class="content">
+        <h2>Basic info</h2>
+        <div class="columns borderClear">
+            <div class="main">
+                <p class="clear greyText">PHOTO<a routerLink="/user/edit/upload-profile-pic" class="editable greyText" title="Change Photo">&#9998;</a></p>
+            </div>
+            <div class="side">
+                <img *ngIf="!!profPic" class="profPic_img" src="{{profPic}}" loading="lazy" />
+                <p class="red" *ngIf="!(!!currUser?.profilePic)">
+                    <fa-icon [icon]="faExclamationCircle" size="1x"></fa-icon>
+                    Attention: A profile picture is required to have a valid Student eId and use in-store discounts.
+                  </p>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="main">
+                <p class="clear greyText">NAME<a *ngIf="!!currUser?.firstName" routerLink="/user/edit/edit-your-details" class="editable greyText" title="Edit Name">&#9998;</a></p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currUser?.firstName ? (currUser?.firstName + ' ' + currUser?.lastName) : ''}}</p>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="main">
+                <p class="clear greyText">DATE OF BIRTH<a *ngIf="!!currUser?.dOB" routerLink="/user/edit/edit-your-details" class="editable greyText" title="Edit DOB">&#9998;</a></p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currUser?.dOB?.toDate() | date }}</p>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="main">
+                <p class="clear greyText">GENDER<a *ngIf="!!currUser?.gender" routerLink="/user/edit/edit-your-details" class="editable greyText" title="Edit Gender">&#9998;</a></p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currUser?.gender}}</p>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="main">
+                <p class="clear greyText">PASSWORD</p>
+            </div>
+            <div class="side">
+                <p class="clear">········</p>
+                <div>
+                    <p><a routerLink="/auth/change-password" class="">Change Password</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Contact info</h2>
+        <div class="columns borderClear">
+            <div class="main">
+                <p class="clear greyText">EMAIL</p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currUser?.email}}</p>
+            </div>
+        </div>
+
+        <!-- <div class="columns">
+            <div class="main">
+                <p class="clear greyText">PHONE</p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currUser?.phoneNum}}</p>
+            </div>
+        </div> -->
+
+        <div class="columns">
+            <div class="main">
+                <p class="clear greyText">INSTITUTION EMAIL<a routerLink="/user/edit/edit-ins-email" *ngIf="!!currUser?.insEmail" class="editable greyText" title="Edit Email">&#9998;</a></p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currUser?.insEmail}}</p>
+                <fa-icon class="faIcons_Comp button" [ngClass]="currUser?.isAccValid ? 'okFIStatus' : 'nokFIStatus'"
+                    [icon]="currUser?.isAccValid ? faCheckCircle : faExclamationCircle" size="1x"
+                    title="{{currUser?.isAccValid ? 'Account complete' : 'Account incomplete'}}">
+                </fa-icon>
+                <div *ngIf="currUser && !currUser?.isAccValid" class="validations_Div">
+                    <p>Your account registration is incomplete. Follow this <a routerLink="/auth/register">link</a> to
+                        complete your account.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!!currInstitution" class="content">
+        <h2>Institution info</h2>
+        <div class="columns borderClear">
+            <div class="main">
+                <p class="clear greyText">COUNTRY</p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currInstitution?.country}}</p>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="main">
+                <p class="clear greyText">INSTITUTION<a *ngIf="!!currUser?.insId" routerLink="/user/edit/edit-your-institution" class="editable greyText" title="Edit Institution">&#9998;</a></p>
+            </div>
+            <div class="side">
+                <p class="clear">{{currInstitution?.name}}</p>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="main">
+                <p class="clear greyText">GRADUATION YEAR<a *ngIf="!!currUser?.insId" routerLink="/user/edit/edit-your-institution" class="editable greyText" title="Edit graduation year">&#9998;</a></p>
+            </div>
+            <div class="side">
+                <p class="clear">{{this.currUser?.gradYr}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="delAccContainer">
+        <app-user-account *ngIf="!!currUser" [currUser]="currUser"></app-user-account>
+    </div>
+</div>

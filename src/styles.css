@@ -1,0 +1,230 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Lora&family=Nunito&family=Overpass+Mono&family=Rubik&family=Ubuntu&display=swap'); */
+
+/* latin */
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v12/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFV0U1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v16/XRXV3I6Li01BKofINeaB.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body, button {
+  font-family: 'Rubik', sans-serif;
+  /* TODO to change to: https://medium.com/@aditya_tyagi/import-fonts-in-an-angular-app-the-easy-right-way-ae9e99cab551 */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Nunito', sans-serif;
+}
+
+.stuBudLogo {
+  width: 5em;
+  height: 5em;
+  margin: 1em;
+  cursor: pointer;
+}
+
+.contentWrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.greyText {
+  color: #50555b;
+  font-weight: 500;
+}
+
+.white {
+  color: #fff;
+}
+
+.clear {
+  margin: 0;
+  padding: 0;
+}
+
+.borderClear {
+  border: none !important;
+}
+
+.stuBleu {
+  color: #04a3ff;
+}
+
+.red {
+  color: #d93025
+}
+
+.okFIStatus {
+  color: #10ff38;
+}
+
+.nokFIStatus {
+  color: #d93025;
+}
+
+.lists {
+  list-style: none;
+  line-height: 2.5em;
+}
+
+hr {
+  color: #d8d9da;
+  /* margin-bottom: 0; */
+}
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+#appFooter_Comp, .push {
+  /* https://css-tricks.com/couple-takes-sticky-footer/ */
+  height: 50px;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.anchorClear {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =======================Css layout debugging==================================== */
+
+/* * { background-color: rgba(255,0,0,.2); }
+* * { background-color: rgba(0,255,0,.2); }
+* * * { background-color: rgba(0,0,255,.2); }
+* * * * { background-color: rgba(255,0,255,.2); }
+* * * * * { background-color: rgba(0,255,255,.2); }
+* * * * * * { background-color: rgba(255,255,0,.2); }
+* * * * * * * { background-color: rgba(255,0,0,.2); }
+* * * * * * * * { background-color: rgba(0,255,0,.2); }
+* * * * * * * * * { background-color: rgba(0,0,255,.2); } */
+
+/*
+=======================Media Query Part====================================
+*/
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width: 240px) and (max-width: 319px) {
+
+  .sideNav {
+    width: 175px !important;
+    padding-top: 15px !important;
+  }
+  .sideNav-logo-img {
+    width: 105px !important;
+  }
+  /* .sideNav a {
+    padding: 4px 8px 4px 12px;
+  } */
+  .store-type-icon-img {
+    width: 24px !important;
+  }
+  .nav-tabs .nav-link.active {
+    border-bottom: 1px solid !important;
+  }
+  .current-page-title {
+    display: none;
+  }
+  #search-box:focus {
+    width: 13rem !important;
+  }
+}
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width: 320px) and (max-width: 961px) {
+  .store-type-icon-img {
+    width: 24px;
+  }
+  .nav-tabs .nav-link.active {
+    border-bottom: 1px solid !important;
+  }
+}
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width: 320px) {
+  .sideNav {
+    width:250px !important;
+    padding-top:1em !important;
+   }   
+   
+  .sideNav-logo-img {
+    width: 135px !important;
+  }
+
+  /* .sideNav a {
+    padding: 4px 8px 4px 12px;
+  } */
+}
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width: 481px) {
+
+}
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width: 641px) {
+
+}
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width: 961px) {
+
+}
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1025px) {
+
+}
+/* hi-res laptops and desktops */
+@media (min-width: 1281px) {
+
+}
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }

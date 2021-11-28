@@ -1,0 +1,9 @@
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+@media screen and (max-width: 767px) {
+}

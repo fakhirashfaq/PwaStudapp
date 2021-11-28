@@ -1,0 +1,54 @@
+<div class="authContainer_Div">
+
+  <h1 class="center">Where do you study?</h1>
+
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" for="regionInput_Sel">Region</label>
+      <select id="regionInput_Sel" name="regionInput_Sel" formControlName="regionFormC" (change)="changeRegion($event)">
+        <option name="" [value]="null" disabled selected hidden>Region</option>
+        <option *ngFor="let reg of region$ | async" [value]="reg?.regId">{{reg?.name}}</option>
+      </select>
+      <div *ngIf="isFormSubmitted && formContRef.regionFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.regionFormC?.errors?.required">Region is required</p>
+      </div>
+    </div>
+
+    <div class="inputWrapper_Div" *ngIf="(institutions$ | async)">
+      <label class="inputLabel_Lbl required" for="institutionInput_Sel">Institution</label>
+      <select id="institutionInput_Sel" name="institutionInput_Sel" formControlName="institutionFormC">
+        <option name="" [value]="null" disabled selected hidden>Institution</option>
+        <option *ngFor="let inst of institutions$ | async" [value]="inst?.domains[0]">{{inst?.name}}</option>
+      </select>
+      <div *ngIf="isFormSubmitted && formContRef.institutionFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.institutionFormC?.errors?.required">Institution is required</p>
+      </div>
+    </div>
+
+    <div class="inputWrapper_Div">
+      <label class="inputLabel_Lbl required" for="gradYrInput_In">Graduation Year</label>
+      <input class="authInput" id="gradYrInput_In" formControlName="gradYrFormC" type="text" placeholder="YYYY" />
+      <div *ngIf="isFormSubmitted && formContRef.gradYrFormC?.errors" class="validations_Div">
+        <p *ngIf="formContRef.gradYrFormC?.errors?.required">Graduation Year is required</p>
+        <p *ngIf="formContRef.gradYrFormC?.errors?.pattern">Graduation Year must be a valid year (YYYY)</p>
+      </div>
+    </div>
+
+    <p>Your institution is not listed? Contact us by using this
+      <a href="mailto:services@stubud.com?subject=[MISSING%20INSTITUTION]%20%2d%20My%20institution%20is%20not%20listed&body=Region:%20Nigeria%0D%0AInstitution:%20">link</a>.
+    </p>
+    <app-stubud-button id="createAccSubmit_Comp" [expand]="true" [buttonType]="'submit'">Continue
+    </app-stubud-button>
+  </form>
+
+  <div *ngIf="isFormSubmitted" class="validations_Div">
+    <p *ngIf="!!errorMessage">{{errorMessage}}<br> For any support, use this <a
+        href="mailto:services@stubud.com?subject=Support&body={{errorMessage}}">link</a> to contact and send us your
+      error. We will get back to your as soon as possible.
+    </p>
+  </div>
+  <p class="right">
+    <a href="mailto:services@stubud.com?subject=Support">Having Problems? Support</a>
+  </p>
+  <p class="center greyText">{{currUser?.email}} - <a routerLink="" (click)="logout()">Log out</a></p>
+</div>

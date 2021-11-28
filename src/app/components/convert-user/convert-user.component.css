@@ -1,0 +1,63 @@
+.convertUserContainer_Div {
+  position: relative;
+  background: #fff;
+  border-radius: 0.25em 0.25em 0.4em 0.4em;
+  overflow: hidden;
+  width: 20rem;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+
+.convertUserContainer_Div .content_Div {
+  padding: 0 2em 2em;
+}
+
+.convertUserContainer_Div .closeIcon_Div {
+  position: absolute;
+  right: 0;
+  font-size: 2.4em;
+  margin-right: 0.15em;
+  line-height: 1em;
+}
+
+.convertUserContainer_Div .closeIcon_Div:hover {
+  color: #04a3ff;
+}
+.convertUserContainer_Div .closeIcon_Div span {
+  transform: rotate(45deg);
+  display: block;
+}
+
+.convertUserButtons_Div a {
+  padding: 0.7em 1.2em;
+  border-radius: 2em;
+  margin: 0 0.2em;
+}
+
+.signInBtn {
+  width: 8em;
+  display: inline-block;
+}
+
+.signInBtn:hover {
+  background: #04a3ff;
+  color: #fff;
+}
+
+.signInBtn:hover .faIcon {
+  color: #fff;
+}
+
+.signInBtn span {
+  margin-right: 0.6em;
+}
+
+.signUpBtn {
+  background: #04a3ff;
+  color: #fff;
+}
+
+.signUpBtn:hover {
+  color: #fff;
+  box-shadow: 0 0 6px #04a3ff;
+}

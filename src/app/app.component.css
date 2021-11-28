@@ -1,0 +1,31 @@
+.show {
+  display: block;
+}
+
+#modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* box-shadow: 0px 0px 2px 1px black; */
+  z-index: 1001;
+  width: 100%;
+}
+
+#overlay {
+  /* responsible for darkening the content behind the modal window. */
+  position: fixed;
+  /* Sit on top of the page content */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  /* Black background with opacity */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+}

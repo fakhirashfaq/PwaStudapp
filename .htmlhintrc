@@ -1,0 +1,4 @@
+"htmlhint.options": {
+    "attr-lowercase": false,
+    "doctype-first": false
+}

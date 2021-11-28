@@ -1,0 +1,15 @@
+﻿<!-- Add ngx-loading-bar at the top ot the display area -->
+<ngx-loading-bar color="#ff4365" height="4px"></ngx-loading-bar>
+<!-- <app-header id="appHeader_Comp"></app-header> -->
+
+<main class="contentWrapper">
+    <router-outlet></router-outlet>
+</main>
+
+<div class="push"></div>
+<app-footer id="appFooter_Comp"></app-footer>
+<!-- Custom modal setup -->
+<div id="modal-container" class="hidden"></div>
+<!-- container in which our dynamically generated component will live until it is killed by the user -->
+<div id="overlay" class="hidden" (click)="close()"></div>
+<!-- responsible for darkening the content behind the modal window. It also has a click event on it which is responsible for closing the modal -->

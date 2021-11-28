@@ -1,0 +1,9 @@
+<div class="searchFormWrapper">
+  <form class="searchForm" (submit)="onSearchDiscount(searchInput.value)">
+    <button type="submit" class="searchBtn button" title="Search" aria-label="Search">
+      <fa-icon [icon]="faSearch" size="1x" id="search_submit submit-button" class="search_fa"></fa-icon>
+    </button>
+    <input type="search" #searchInput [value]="input" placeholder="Search" class="searchIn" title="Search" aria-label="Search">
+    <div class="clearIcon_Div button" (click)="clear()" title="Clear search" aria-label="Clear search"><span>&#43;</span></div>
+  </form>
+</div>

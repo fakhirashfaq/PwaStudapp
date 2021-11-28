@@ -1,0 +1,52 @@
+<div class="authContainer_Div">
+
+  <h1 class="center">Profile picture</h1>
+  <h4 class="center greyText">A profile picture is required to have a valid Student eId and use in-store discounts.</h4>
+
+  <div class="requirements_dv greyText" *ngIf="!!this.currUser && !(!!this.currUser?.profilePic)">
+    <h3 class="greyText">Upload the Perfect ID Card Photo</h3>
+    <ol>
+      <li>Use a smooth, solid white, off-white or light gray background.</li>
+      <li>Leave space around the sides of your face and above your head in photo.</li>
+      <li>Shoulders and face must squarely face the camera.</li>
+      <li>Adjust your hair and clothing so that your entire face is visible.</li>
+      <li>Use lighting that highlights both sides of your face equally.</li>
+    </ol>
+  </div>
+
+  <img class="profPic_img" [src]="profPic" *ngIf="currUser" loading="lazy">
+
+  <div class="actions_div" *ngIf="!isCropperVisible && !isUploadInProgress">
+
+    <label class="profilePicUpload_Lbl button" for="profilePicUpload_In">
+      {{!!this.currUser?.profilePic ? 'Change' : 'Upload'}}
+    </label>
+    <input id="profilePicUpload_In" type="file" accept="image/*" alt="Profile pic" (change)="fileChangeEvent($event)" />
+
+    <app-stubud-button class="cropperBtn_Comp" *ngIf="!!this.currUser?.profilePic"
+      (clickEvtEmitter)="removeUserProfPic()">
+      Remove
+    </app-stubud-button>
+  </div>
+
+  <div class="imageCropperContainer_Div" *ngIf="isCropperVisible && !isUploadInProgress">
+
+    <div class="cropperWrapper_Div">
+      <div class="cropperActions_Div">
+        <app-stubud-button class="cropperBtn_Comp" (clickEvtEmitter)="uploadProfPic()">
+          Accept
+        </app-stubud-button>
+        <app-stubud-button class="cropperBtn_Comp" (clickEvtEmitter)="cancelProfPic()">
+          Cancel
+        </app-stubud-button>
+      </div>
+
+      <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1/1"
+        [resizeToWidth]="1000" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+        (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()">
+      </image-cropper>
+    </div>
+  </div>
+
+
+</div>

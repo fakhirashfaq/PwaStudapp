@@ -1,0 +1,105 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+    function isAdmin(uid) {
+  	  return uid in ["jLgle3CEpsgobkNFW5xXzL1eGpC2", "xxLg3gy0mkYUZM1OxAUorTh4ulw2"]; // List of Allowed Admin
+    }
+
+		match /assetsUtil/{document=**} {
+    	allow read: if true;
+      allow write: if false;
+    }
+		
+		match /buddies/{document=**} {
+    	allow read: if true;
+      allow write: if isAdmin(request.auth.uid);
+    }
+    
+    match /discounts/{discount} {
+    	// Allow write to allow likeCnt changes
+    	allow read: if true;
+      allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid)) || isAdmin(request.auth.uid);
+      
+      	match /vcodes/{document=**} {
+    			allow read: if request.auth != null;
+      		allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid)) || isAdmin(request.auth.uid);
+    		}
+    }
+    
+    match /institutions/{document=**} {
+    	allow read: if true;
+      allow write: if false;
+    }
+    
+    match /likes/{userId} {
+    	allow read, write: if request.auth.uid == userId;
+    }
+    
+    match /regions/{document=**} {
+    	allow read: if true;
+      allow write: if false;
+    }
+    
+    match /subscriptions/{document=**} {
+    	allow read: if false;
+      allow write: if true;
+    }
+    
+    match /usedvcodes/{discountId} {
+    	allow read: if false;
+      allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+    
+    match /ogvcodes/{buddyId} {
+    	allow read: if false;
+      allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
+
+      	match /genCode/{document=**} {
+    			allow read: if false;
+      		allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    		}
+    }
+  
+    // Allow users to create a document for themselves in the users collection
+    match /users/{document=**} {
+      allow create;
+    }
+
+    match /admins/{document=**} {
+      allow read: if isAdmin(request.auth.uid);
+      allow write: if isAdmin(request.auth.uid);
+    }
+    
+    match /users/{userId} {
+      allow read: if exists(/databases/$(database)/documents/users/$(request.auth.uid)); // Allow any users to read. Required to check for existing ins email.
+      allow update: if request.auth.uid == userId;
+      allow delete: if false;
+    }
+    
+    // match /vcodes/{discountId} {
+    // 	allow read: if request.auth != null;
+    //   allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid)) || isAdmin(request.auth.uid);
+    // }
+    
+    match /epheVcodesData/{document} {
+    	allow read: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
+      allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
+      
+      	match /genCode/{document=**} {
+    		  allow read: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
+      		allow write: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    		}
+    }
+
+    match /carousel/{document=**} {
+    	allow read: if true;
+      allow write: if isAdmin(request.auth.uid);
+    }
+
+    match /faqs/{document=**} {
+    	allow read: if true;
+      allow write: if true;
+    }
+  }
+}

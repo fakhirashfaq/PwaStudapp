@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<div class="contentWrapper center">
+    <h1>My Favorites</h1>
+    <app-pageLoading *ngIf="!isDiscountLoaded"></app-pageLoading>
+    <div class="discountListsContainer_div">
+        <div class="" *ngFor="let dct of discountsArr">
+            <app-discountitem class="discountListWrapper_div" [discount]="dct"></app-discountitem>
+        </div>
+        <br>
+    </div>
+    <h4 *ngIf="!(!!discountsArr)">No discounts liked</h4>
+    <div class="push"></div>
+</div>
+
+
+<!-- <app-footer id="appFooter_Comp"></app-footer> -->

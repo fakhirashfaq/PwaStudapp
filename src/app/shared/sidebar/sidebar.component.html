@@ -1,0 +1,119 @@
+<div class="sideBarContainer_div">
+  <div class="userIcon_div" (click)="showMainNav()">
+    <img class="menuImg" src="../../../assets/icons/hamburger.png" alt="Menu">
+  </div>
+  <!-- Side Navigation -->
+  <div id="mySidenav" class="sideNav" [ngStyle]="{left: sideLeft}">
+    <div class="">
+      <!-- ist row  -->
+      <div class="ist-row">
+        <p class="closeArrow clear" (click)="hideMainNav()"></p>
+        <div class="authBtn" *ngIf="!(!!user); else logoutBlock">
+          <button class="login-btn" routerLink="/auth/login" (click)="disableDropdown()">
+            <fa-icon [icon]="faUser" size="1x" class="stuBleu faIcon"></fa-icon>
+            Login
+          </button>
+          <button class="signup-btn white" routerLink="/auth/register/create-account" (click)="disableDropdown()">Sign Up</button>
+        </div>
+        <ng-template #logoutBlock>
+          <div class="authBtn">
+            <button class="signup-btn white" (click)="logout()">Logout</button>
+          </div>
+        </ng-template>
+      </div>
+      <!-- 2nd row  -->
+      <!-- Enable <div class="category-div">
+        <h3 class="">All Category</h3>
+      </div> -->
+      <!-- 3rd row Enable -->
+      <!-- <div Enable class="second-row">
+
+        <div class="">
+          <ul class="lists clear">
+            <li class="arrow" *ngFor="let category of mainCtgNmArr" (click)="showSelectedSubCtg(category)">
+              {{category}}</li>
+          </ul>
+        </div>
+      </div> Enable -->
+      <!-- 4th row  -->
+      <!-- <div class="specific-border">
+      </div> -->
+      <!-- Enable <hr> Enable -->
+      <!-- 5th row  -->
+      <div class="second-row">
+        <div class="">
+          <ul class="lists clear">
+            <li>
+              <a class="anchorClear expand" routerLink="">
+                <fa-icon [icon]="faHome" size="1x" class="faIcon greyText"></fa-icon>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="anchorClear expand" routerLink="/user" *ngIf="(!!user)">
+                <fa-icon [icon]="faUserCircle" size="1x" class="faIcon greyText"></fa-icon>
+                My STUBUD
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sub category navbar  -->
+  <div id="mySidenav" class="sideNav" [ngStyle]="{left: subCategorySideLeft}">
+    <div class="">
+      <div class="ist-row">
+        <p class="closeArrow clear" (click)="closeAllNav()"></p>
+        <div class="authBtn" *ngIf="!(!!user); else logoutBlock">
+          <button class="login-btn" routerLink="/auth/login" (click)="disableDropdown()">
+            <fa-icon [icon]="faUser" size="1x" class="stuBleu faIcon"></fa-icon>
+            Login</button>
+          <button class="signup-btn white" routerLink="/auth/register/create-account" (click)="disableDropdown()">Sign Up</button>
+        </div>
+        <ng-template #logoutBlock>
+          <div class="authBtn">
+            <button class="signup-btn white" (click)="logout()">Logout</button>
+          </div>
+        </ng-template>
+      </div>
+      <!-- 2nd row  -->
+      <!-- Enable <div class="third-row">
+        <p class=" subCtg closeSub" (click)="hideSubCtg()">{{selectedCtgNm}}</p>
+      </div> Enable -->
+      <!-- 3rd row  -->
+      <!-- Enable <div class="second-row">
+        <div class="">
+          <ul class="lists clear">
+            <li *ngFor="let subcategory of subCategoryList" (click)="navigateToCtg(subcategory.name)">
+              {{subcategory.name}}</li>
+          </ul>
+        </div>
+      </div> Enable -->
+      <!-- 4th row  -->
+      <hr>
+      <!-- 5th row  -->
+      <div class="second-row">
+        <div class="">
+          <ul class="lists clear">
+            <li>
+              <a class="anchorClear expand" routerLink="">
+                <fa-icon [icon]="faHome" size="1x" class="faIcon greyText"></fa-icon>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="anchorClear expand" routerLink="/user" *ngIf="(!!user)">
+                <fa-icon [icon]="faUserCircle" size="1x" class="faIcon greyText"></fa-icon>
+                My STUBUD
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mySideNav-backdrop" (click)="hideMainNav()" *ngIf="isNavOpened"></div>
+</div>

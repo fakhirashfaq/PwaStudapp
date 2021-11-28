@@ -1,0 +1,18 @@
+div.collapsed {
+  height: 3em;
+  overflow: hidden;
+}
+
+.text_Par {
+  margin-top: 0.2em;
+}
+
+.text_Par:hover {
+  text-decoration: underline;
+}
+
+div.collapsed + .text_Par::before {
+  /* Show ".... " before read more when div is collapsed */
+  content: ".... ";
+  color: #000;
+}

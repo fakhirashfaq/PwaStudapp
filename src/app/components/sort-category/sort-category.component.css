@@ -1,0 +1,81 @@
+/* Extra filter bar */
+
+.categoryCBDropdownFg_Cl {
+  border: 1px solid #50555b;
+  border-radius: 2em;
+  color: #50555b;
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.categoryCBDropdownFg_Cl input[type="radio"] {
+  /* Checkbox */
+  display: none;
+}
+
+.categoryCBDropdownFg_Cl input[type="radio"] + label {
+  /* Checkbox Label */
+  padding: 0.2em 0.4em;
+  margin: 0.4em 0;
+}
+
+.categoryCBDropdownFg_Cl input[type="radio"] + label:hover {
+  /* Checkbox Label */
+  color: #04a3ff;
+}
+
+.categoryCBDropdownFg_Cl input[type="radio"] + label:active {
+  /* Checkbox Label */
+  color: #ff4365;
+}
+
+.categoryCBDropdownFg_Cl input[type="radio"]:checked + label {
+  /* Checkbox label when checked */
+  border-bottom: 0.3em solid #04a3ff;
+  color: #04a3ff;
+  outline: none;
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  */
+@media screen and (max-width: 767px) {
+  /* .categoryCBDropdownFg_Cl input[type="radio"] + label {
+    margin: 0 0.6em;
+  } */
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  */
+@media screen and (max-width: 600px) {
+  /* .sortItem_I,
+  .vertical-align-middle {
+    width: 60%;
+  } */
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+    ##Device = Nokia 8110 4G
+  */
+@media screen and (min-width: 240px) and (max-width: 767px) {
+  /* .sortItem_I,
+  .vertical-align-middle {
+    width: 100%;
+  }
+  .categoryCBDropdownFg_Cl {
+    border:2px solid lightgray;
+    border-radius:2em;
+    padding: 0.5em 0.4em;
+   }
+   
+  .categoryCBDropdownFg_Cl input[type="radio"] + label {
+    padding: 0;
+
+  } */
+}

@@ -1,0 +1,134 @@
+.footerContainer_Foot {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #04a3ff;
+  margin-top: 5em;
+}
+
+.footerContainer_Foot div {
+  width: 50%;
+  flex-flow: 1;
+  padding: 0.2em 0 1.2em;
+}
+
+.socialContainer_Div,
+.subscriptionContainer_Div {
+  background-color: #d8d8d8;
+}
+
+.emailSubsWrap_span {
+  position: relative;
+  width: 85%;
+}
+
+#emailSubs_In {
+  padding: 1em;
+  width: 70%;
+  border: none;
+}
+
+.emailSubsFI {
+  position: absolute;
+  top: 0.1em;
+  right: 1em;
+}
+
+.defaultFIStatus {
+  color: #757575;
+}
+
+.emailSubsFI:hover {
+  color: #04a3ff;
+}
+
+.emailSubsErr_Par {
+  color: #d93025;
+  margin: 0.2em 0 0;
+}
+
+.stuBudLogo {
+  width: 5em;
+  margin: 1em;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.links_span {
+  display: inline-block;
+}
+
+.linksContainer_Div,
+.supportContainer_Div {
+  background-color: #04a3ff;
+}
+
+.linksContainer_Div img {
+  margin-right: 5em;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.socials li a img {
+  width: 2em;
+  height: 2em;
+}
+
+.faIcons {
+  color: #000;
+}
+
+.faIcons:hover {
+  color: #04a3ff;
+}
+
+.rights_Par {
+  border-top: 0.2em solid #fff;
+  display: inline-block;
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.rights_Par > p {
+  margin: 0.5em;
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+@media screen and (max-width: 767px) {
+  .footerContainer_Foot div {
+    width: 100%;
+  }
+
+  .subscriptionContainer_Div h2 {
+    margin-top: 0;
+  }
+
+  #emailSubs_In {
+    width: 90%;
+  }
+
+  .linksContainer_Div img {
+    margin-right: 2em;
+  }
+
+  .linksContainer_Div .links_span .lists li a {
+    display: block;
+    width: 100%;
+  }
+
+  .supportContainer_Div .lists li a {
+    display: block;
+    width: 100%;
+  }
+
+  .supportContainer_Div > h2 {
+    margin-top: 0;
+  }
+}

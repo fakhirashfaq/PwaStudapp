@@ -1,0 +1,62 @@
+<footer class="footerContainer_Foot">
+  <div class="socialContainer_Div">
+    <h2>Follow us on social media</h2>
+    <h3 class="greyText">Want more discounts? Follow our socials and be the first to see our newest offers!</h3>
+    <ul class="socials lists clear">
+      <li><a href="https://www.facebook.com/stubudofficial/" title="Follow us on Facebook" aria-label="Follow us on Facebook" target="_blank" rel="noreferrer">
+          <img class="" src="../../../assets/icons/facebook.png" alt="Facebook"
+            loading="lazy"/>
+        </a></li>
+      <li><a href="https://twitter.com/stubudofficial" title="Follow us on Twitter" aria-label="Follow us on Twitter" target="_blank" rel="noreferrer">
+          <img class="" src="../../../assets/icons/twitter.png" alt="Twitter"
+            loading="lazy"/>
+        </a></li>
+      <li><a href="https://www.instagram.com/stubudofficial/" title="Follow us on Instagram" aria-label="Follow us on Instagram" target="_blank" rel="noreferrer">
+          <img class="" src="../../../assets/icons/insta.png" alt="Instagram"
+            loading="lazy"/>
+        </a></li>
+    </ul>
+  </div>
+  <div class="subscriptionContainer_Div">
+    <h2>Never miss an update, promotion or offer</h2>
+    <h3 class="greyText">Sign up for our newsletter</h3>
+    <form [formGroup]="subscriptionFG" (ngSubmit)="submitForm()">
+      <span class="emailSubsWrap_span">
+        <input id="emailSubs_In" type="text" placeholder="Enter your Email Address" formControlName="emailFormC" />
+        <fa-icon class="emailSubsFI button" [ngClass]="currFIStatus" [icon]="currentEmailSubsFI" size="1x"
+          (click)="submitForm()" title="Submit your email" aria-label="Submit your email"></fa-icon>
+        <p class="emailSubsErr_Par" *ngIf="isFormSubmitted && formContRef.emailFormC?.errors">Invalid email</p>
+      </span>
+    </form>
+  </div>
+  <div class="linksContainer_Div">
+    <a routerLink="" title="Stubud">
+      <img class="stuBudLogo" src="../../../assets/img/whiteLogo.png" alt="Stubud" loading="lazy">
+    </a>
+    <span class="links_span">
+      <h2 class="white">Useful links</h2>
+      <ul class="lists white clear">
+        <li><a class="white anchorClear underline" href="https://services.stubud.com/" title="About" aria-label="About" target="_blank" rel="noreferrer">About</a></li>
+        <li><a class="white anchorClear underline" href="https://services.stubud.com/index.php/privacy-policy/" title="Privacy Policy" aria-label="Privacy Policy" target="_blank" rel="noreferrer">Privacy
+            Policy</a></li>
+        <li><a class="white anchorClear underline"
+            href="https://services.stubud.com/index.php/termsandconditions/" title="Terms and Conditions" aria-label="Terms and Conditions" target="_blank" rel="noreferrer">Terms and Conditions</a></li>
+        <li><a class="white anchorClear underline"
+            href="https://services.stubud.com/index.php/student-community/" title="Student Card" aria-label="Student Card" target="_blank" rel="noreferrer">Student Card</a></li>
+        <li><a class="white anchorClear underline"
+            href="https://services.stubud.com/index.php/student-community/" title="Student Discount" aria-label="Student Discount" target="_blank" rel="noreferrer">Student Discount</a></li>
+      </ul>
+    </span>
+  </div>
+  <div class="supportContainer_Div">
+    <h2 class="white">Support?</h2>
+    <ul class="lists white clear">
+      <li><a routerLink="FAQs" class="white anchorClear underline" title="FAQs" aria-label="FAQs">FAQs</a></li>
+      <li><a class="white anchorClear underline" href="https://services.stubud.com/index.php/contact-stubud/" title="Contact us" aria-label="Contact us" target="_blank" rel="noreferrer">Contact us</a></li>
+    </ul>
+  </div>
+  <span class="rights_Par">
+    <p class="white">© Stubud Ltd. 2020 · All rights reserved</p>
+  </span>
+
+</footer>

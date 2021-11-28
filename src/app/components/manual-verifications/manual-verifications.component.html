@@ -1,0 +1,17 @@
+<app-dn-d-f-uploader></app-dn-d-f-uploader>
+<h3 class="center" *ngIf="currUser?.regId === 'NG'">Or</h3>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()" *ngIf="currUser?.regId === 'NG'">
+    <div class="inputWrapper_Div">
+        <label class="inputLabel_Lbl required" for="stdMNmInput_In">Student Matriculation number</label>
+        <input class="authInput" id="stdMNmInput_In" formControlName="stdMNmFormC" type="text"
+            placeholder="Student Matriculation number" />
+        <div *ngIf="isFormSubmitted && formContRef.stdMNmFormC?.errors" class="validations_Div">
+            <p *ngIf="formContRef.stdMNmFormC?.errors?.required">Student Mat. No. is required</p>
+        </div>
+        <p class="successMsg_p" *ngIf="success">We've received your Matriculation number.
+            We will validate your account as soon as possible.</p>
+    </div>
+    <app-stubud-button id="createAccSubmit_Comp" [expand]="true" [buttonType]="'submit'" *ngIf="currUser?.regId === 'NG'">
+        Send
+    </app-stubud-button>
+</form>

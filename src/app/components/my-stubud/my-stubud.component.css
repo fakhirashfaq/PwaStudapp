@@ -1,0 +1,48 @@
+/**
+ * Generic Styling
+ */
+.myStdContainer_div {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/**
+ * Tabs
+ */
+.tabs {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+  justify-content: space-evenly;
+}
+
+.tabs label {
+  order: 1;
+  padding: 0.6rem 0;
+  margin-right: 0.2rem;
+  transition: background ease 0.2s;
+  margin-bottom: 0;
+}
+
+.tabs .tab {
+  -webkit-box-ordinal-group: 100;
+  order: 99;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  background: #fff;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked+label {
+  border-bottom: 0.3em solid #04a3ff;
+}
+
+.tabs input[type="radio"]:checked+label+.tab {
+  display: block;
+}

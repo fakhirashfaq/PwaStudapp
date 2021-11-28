@@ -1,0 +1,37 @@
+.dndContainer_Div {
+  padding-top: 1em;
+  text-align: center;
+  border: dashed 0.2em #d4d4d4;
+  margin-top: 1.5rem;
+}
+
+.dndContainer_Div.hovering {
+  border: dashed 0.2em #04a3ff;
+}
+
+.dndContainer_Div .file-label {
+  font-size: 1.2em;
+}
+
+.dndContainer_Div input {
+  display: none;
+}
+
+.dndContainer_Div label {
+  color: white;
+  background-color: #04a3ff;
+  cursor: pointer;
+  border-radius: 2em;
+  padding: 0.6em 1.4em;
+}
+
+.dndContainer_Div label:hover {
+  background: #14acff;
+  box-shadow: 0 2px 8px 1px rgba(64, 60, 67, .24);
+}
+
+.dndContainer_Div h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #38424c;
+}

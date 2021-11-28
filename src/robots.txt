@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /favorites/
+Disallow: /auth/login/
+Disallow: /auth/register/
+Disallow: /user/
+
+Sitemap: https://stubud-bb83b.firebaseapp.com/sitemap.xml

@@ -1,0 +1,66 @@
+.eidContainer_div {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #efefef;
+  padding: 1em;
+  margin: 5em auto;
+  text-align: right;
+  border-radius: 0.4em;
+  max-width: 38em;
+}
+
+.profPic_img {
+  width: 8em;
+  height: 8em;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  border: 6px solid #efefef;
+}
+
+.statusWrapper {
+  float: right;
+}
+
+.status {
+  color: white;
+  padding: 0.2em 0.5em;
+  border: 20%;
+  border-radius: 0.3em;
+}
+
+.statusValid {
+  background-color: #10ff38;
+}
+
+.statusInvalid {
+  background-color: #d93025;
+}
+
+.almostValid {
+  background-color: #EFB700;
+}
+
+.userNm {
+  margin-top: 3em;
+}
+
+.userDetails {
+  width: 100%;
+}
+
+.logo_img {
+  width: 5em;
+  display: inline-block;
+  opacity: 40%;
+  right: 0;
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+@media screen and (max-width: 767px) {
+
+}

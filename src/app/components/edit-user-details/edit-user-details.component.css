@@ -1,0 +1,78 @@
+.flexWrapper {
+  display: flex;
+}
+
+input[type="radio"] {
+  /* Gender and Payment options */
+  display: none;
+  border-radius: 0;
+}
+
+input[type="radio"] + label {
+  /* For Gender radios, Payment options and select tags */
+  width: 33.3%;
+  text-align: center;
+  padding: 0.6em 0;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  transition: all 0.35s ease-in-out;
+}
+
+input[type="radio"] + label:hover {
+  border: 1px solid #ff4365;
+}
+
+input[type="radio"]:checked + label,
+input:checked + label:before {
+  /* Gender radios when selected */
+  background-color: #04a3ff;
+  color: #fff;
+}
+
+input[type="radio"] + label:first-of-type {
+  /* Input radio for male */
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+}
+
+input[type="radio"] + label:last-of-type {
+  /* Input radio for female */
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+}
+
+.inputDoBWrapper_Div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+
+#inputDate_In {
+  flex-grow: 0;
+  width: 25%;
+}
+
+#inputMonth_Sel {
+  flex-grow: 0;
+  width: 40%;
+}
+
+#inputYear_In {
+  flex-grow: 0;
+  width: 25%;
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  */
+@media screen and (max-width: 767px) {
+}

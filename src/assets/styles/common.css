@@ -1,0 +1,80 @@
+.button {
+  cursor: pointer;
+}
+
+.authContainer_Div {
+  display: block;
+  padding: 0 1em;
+  margin: 0 auto;
+  max-width: 35rem;
+}
+
+.required::after {
+  content: " *";
+  color: #d93025;
+}
+
+.inputWrapper_Div {
+  margin: 1em 0;
+  position: relative;
+}
+
+.inputWrapper_Div input {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #ebecec;
+  border-radius: 0.4em;
+}
+
+.inputWrapper_Div input:focus {
+  /* Input box clicked on to type */
+  border-color: #04a3ff;
+}
+
+.inputLabel_Lbl {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.faIcons_Comp {
+  display: inline;
+  position: absolute;
+  right: 1em;
+  top: 2.6em;
+  cursor: pointer;
+}
+
+#createAccSubmit_Comp {
+  margin: 0.5em 0;
+  display: block;
+}
+
+.reportMail {
+  color: #0000ee;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.agreementText_Par {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+.authInput, #inputMonth_Sel, #regionInput_Sel, #institutionInput_Sel {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #ebecec;
+  border-radius: 0.4em;
+}
+
+.authInput:focus, #inputMonth_Sel:focus, #regionInput_Sel:focus, #institutionInput_Sel:focus {
+  /* Input box clicked on to type */
+  border-color: #04a3ff;
+}
+
+.validations_Div > p {
+  /* font-size: 1em; */
+  color: #d93025;
+  margin-bottom: 0;
+}

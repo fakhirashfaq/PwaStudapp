@@ -1,0 +1,111 @@
+.carousel {
+  width: 80%;
+  margin-bottom: 0.6em;
+  margin: 0 auto 9px auto;
+}
+
+.sortAndFilterWrap {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.sortAndFilterWrap div {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.sortWrapper {
+  width: 50%;
+}
+
+.discountListsContainer_div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.discountListWrapper_div {
+  padding: 1em;
+  flex: 1 16%;
+  display: flex; /* so child elements can use flexbox stuff too! */
+}
+
+.discountListsContainer_div > div {
+  margin: 0 auto;
+}
+
+.loadMore {
+  width: 100%;
+  margin-top: 4em;
+}
+
+.loadMore_Btn {
+  display: inline-block;
+  background-color: #04a3ff;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 2em;
+  padding: 1em 1.5em;
+  border: 0;
+  font-size: 1em;
+}
+
+.loadMore_Btn:hover {
+  box-shadow: 0 0 6px #04a3ff;
+}
+
+.loadMore_Btn:active {
+  outline: none;
+  background-color: #ff4365;
+  box-shadow: none;
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers */
+@media (min-width: 641px) and (max-width: 1280px) {
+  .carousel {
+    width: 100%;
+    margin-bottom: 0.6em;
+    margin: 0 auto;
+  }
+
+  .discountListsContainer_div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 640px) {
+  .carousel {
+    width: 100%;
+    margin-bottom: 0.6em;
+    margin: 0 auto;
+  }
+
+  .discountListsContainer_div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+  ##Device = Nokia 8110 4G
+*/
+@media screen and (max-width: 767px) {
+  .sortAndFilterWrap div {
+    margin: 0 0.4em;
+  }
+
+  .sortWrapper {
+    width: auto;
+    flex-grow: 2;
+  }
+
+  .dctTypeWrapper {
+    flex-grow: 1;
+  }
+}

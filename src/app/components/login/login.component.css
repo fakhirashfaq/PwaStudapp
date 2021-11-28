@@ -1,0 +1,15 @@
+#signInSubmit_Comp {
+  margin: 0.5em 0;
+  display: block;
+}
+
+.alternativeSignIn_Par {
+  font-size: 1.5em;
+}
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+@media screen and (max-width: 767px) {
+}

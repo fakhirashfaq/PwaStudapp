@@ -1,0 +1,29 @@
+.discountListsContainer_div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.discountListsContainer_div > div {
+  margin: 0 auto;
+}
+
+.discountListWrapper_div {
+  padding: 1em;
+  flex: 1 16%;
+  display: flex; /* so child elements can use flexbox stuff too! */
+}
+
+
+/* portrait tablets, portrait iPad, landscape e-readers */
+@media (min-width: 641px) and (max-width: 1280px) {
+  .discountListsContainer_div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 640px) {
+  .discountListsContainer_div {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

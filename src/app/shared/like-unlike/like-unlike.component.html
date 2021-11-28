@@ -1,0 +1,2 @@
+<input class="toggleHeart_In" id="{{discountID | slice:0:10}}" type="checkbox" [disabled]="shouldBeDisabled" (click)="processLikeUnlike();false"/>
+<label class="heart_Lbl" for="{{discountID | slice:0:10}}" name="like" [ngClass]="!likeState ? 'liked' : 'unLiked'" title="Add to My Favorites" aria-label="Add to My Favorites"></label>
